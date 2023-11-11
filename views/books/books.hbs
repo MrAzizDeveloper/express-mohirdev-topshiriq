@@ -1,0 +1,21 @@
+<main>
+    {{#if data}}
+    {{#each data}}
+        <div class="card ">
+          <div class="container mx-auto">
+              <p class="text-bold " style="font-size: 30px;">id: {{id}}</p>
+            <h4><b>Title: {{title}}</b></h4>
+            <p>Author: {{author}}</p>
+            <form action="/books/delete/{{id}}" method="post">
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+             <form action="/books/update/{{id}}" method="post">
+              <button type="submit" class="btn btn-succes">Update</button>
+            </form>
+          </div>
+        </div>
+    {{/each}}
+    {{else}}
+      <p>Kitoblarni barcha listi...</p>
+    {{/if}}
+  </main>
